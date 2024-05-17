@@ -8,7 +8,7 @@
   <p align="center">
     chat wtih ollama models
     <br />
-    <a href="" target="blank"><strong>macos</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a href="https://github.com/TaterTotX/ollama-phone/releases/download/Ollama-Phonev1.0.0/ollama-phone.dmg" target="blank"><strong>macos</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://github.com/TaterTotX/ollama-phone/releases/download/Ollama-Phonev1.0.0/ollama-phone.exe" target="blank"><strong>windows</strong></a>&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="https://discord.gg/bkVQsAgG" target="blank"><strong>discord</strong></a>
     <br />
