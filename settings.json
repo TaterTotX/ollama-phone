@@ -1,0 +1,11 @@
+{
+ "model": "llama3:latest",
+ "prompt": "you are an interesting ai",
+ "welcomeMessages": "Hello!,I am ollama !,Nice to meet you !",
+ "title": "chat with ollama",
+ "input_text": "ollama is typing...",
+ "speak_text": "ollama is speaking...",
+ "user1path": "",
+ "user2path": "",
+ "chat_ground": ""
+}
