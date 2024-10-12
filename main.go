@@ -2,15 +2,14 @@ package main
 
 import (
 	"embed"
+	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/menu"
 	"github.com/wailsapp/wails/v2/pkg/menu/keys"
+	"github.com/wailsapp/wails/v2/pkg/options"
+	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 	"github.com/wailsapp/wails/v2/pkg/options/mac"
 	"github.com/wailsapp/wails/v2/pkg/options/windows"
 	"github.com/wailsapp/wails/v2/pkg/runtime"
-
-	"github.com/wailsapp/wails/v2"
-	"github.com/wailsapp/wails/v2/pkg/options"
-	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
 )
 
 //go:embed all:frontend/dist
@@ -30,6 +29,13 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
+		Title:            "ollama",
+		BackgroundColour: &options.RGBA{R: 0, G: 0, B: 0, A: 0},
+
+		Windows: &windows.Options{
+			WebviewIsTransparent: true,
+			WindowIsTranslucent:  false,
+		},
 
 		Frameless: true,
 		Width:     480,
@@ -37,8 +43,7 @@ func main() {
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
-		BackgroundColour: &options.RGBA{R: 0, G: 0, B: 0, A: 0},
-
+		OnStartup: app.startup,
 		Bind: []interface{}{
 			app,
 		},
@@ -46,19 +51,14 @@ func main() {
 
 			//// 网页视图是否透明
 			WebviewIsTransparent: true,
-			WindowIsTranslucent:  false,
+			WindowIsTranslucent:  true,
 
 			// 关于窗口的信息
 			About: &mac.AboutInfo{
-				Title:   "ollama_pc_phone", // 应用程序的名称
+				Title:   "ollama",          // 应用程序的名称
 				Message: "TaterTotX© 2024", // 关于窗口中显示的信息，例如版权信息
 
 			},
-		},
-
-		Windows: &windows.Options{
-			WebviewIsTransparent: true,
-			WindowIsTranslucent:  true,
 		},
 	})
 

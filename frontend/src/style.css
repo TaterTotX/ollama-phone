@@ -71,10 +71,7 @@
 body {
     min-height: 100vh;
     color: var(--color-text);
-    background:transparent;
-    transition:
-            color 0.5s,
-            background-color 0.5s;
+
     line-height: 1.6;
 
     font-family: 'Comic Sans MS', cursive; /* 添加可爱字体 */
@@ -116,4 +113,8 @@ input,
 textarea {
     -webkit-appearance: none;
     appearance: none;
+}
+
+#app {
+    background: transparent;
 }

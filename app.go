@@ -3,6 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
+	"github.com/lxn/win"
+	"syscall"
 )
 
 var globalSettings map[string]string
@@ -26,9 +28,12 @@ func NewApp() *App {
 // startup is called when the app starts. The context is saved
 // so we can call the runtime methods
 func (a *App) startup(ctx context.Context) {
-	a.ctx = ctx
+
 	initSettings() // 初始化数据库
 	fmt.Println("初始化数据库成功")
+	hwnd := win.FindWindow(nil, syscall.StringToUTF16Ptr("ollama"))
+	win.SetWindowLong(hwnd, win.GWL_EXSTYLE, win.GetWindowLong(hwnd, win.GWL_EXSTYLE)|win.WS_EX_LAYERED)
+
 }
 
 // Greet returns a greeting for the given name

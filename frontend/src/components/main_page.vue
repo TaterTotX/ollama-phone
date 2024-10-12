@@ -242,7 +242,7 @@ provide('send_notification_Message',send_notification_Message)
 
 <template>
 
-  <div class="container" >
+  <div class="container" style="background: transparent" >
 
     <img :src="iphonepath" alt="Descriptive text for the image" class="inserted-image">
     <div class="wrapper" :style="{ backgroundImage: `url(${settings.chat_ground})` }">
